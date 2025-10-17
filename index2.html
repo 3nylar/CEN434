@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enilara's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        nav {
+            background-color: maroon;
+            padding: 10px 0;    
+        }
+
+        .navigationList {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navigationLinks > a {
+            text-decoration: none;
+            color: black;
+        }
+
+        header {
+            background-color: whitesmoke;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sectionHeader {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        hr {
+            width: 85%;
+            margin: auto;
+            border: none;
+            border-bottom: 1px solid maroon;
+            margin-bottom: 20px;
+        }
+
+        .fullName {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .bio {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .aboutcontainer {
+            display: flex;
+            background-color: white;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profilePicture {
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .header-description {
+            width: 60%;
+            margin: 20px;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        
+        .project-description, .activity-description {
+            text-align: justify;
+            font-size: 16px;
+            margin: 10px 20px;
+        }
+
+        .projectContainer {
+            background-color: white;
+            width: 60%;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .projects {
+            display: flex;
+            gap: 20px;
+            overflow: scroll;
+        }
+
+        .project-picture {
+            display: block;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            border: 2px solid maroon;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        legend {
+            color: maroon;
+            font-weight: bold;
+            font-size: 1.3rem;
+            padding: 0 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            color: maroon;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border: 1px solid maroon;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: maroon;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        footer {
+            background-color: maroon;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navigationList">
+            <li class="navigationLinks">
+                <a href="#Home">Home</a>
+            </li>
+            <li class="navigationLinks">
+                <a href="#About">About</a>
+            </li>
+            <li class="navigationLinks">
+                <a href="#Projects">Projects</a>
+            </li>
+            <li class="navigationLinks">
+                <a href="#Contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1 class="fullName">ENILARA ADEBUKOLA ADEFILA</h1>
+        <p class="bio">22CJ031060 | COMPUTER ENGINEERING</p>
+    </header>
+
+    <section id="About">
+        <h2 class="sectionHeader">ABOUT ENILARA</h2>
+        <hr>
+        <div class="aboutcontainer">
+            <img src="photo_2025-05-18_12-46-38.jpg" alt="Picture of Adebukola" class="profilePicture" width="250" height="300">
+            <p class="header-description">I'm a dedicated Computer Engineering student passionate about making a difference through various extracurricular activities. I believe in the power of community service, environmental conservation, and youth leadership to create positive change in our world.</p>
+        </div>
+    </section>
+
+    <section id="Projects">
+        <h2 class="sectionHeader">PROJECTS</h2>
+        <hr>
+        <div class="projects">
+            <div class="projectContainer">
+                <img src="image.png" alt="Elementor Clone Website" width="300" height="200" class="project-picture">
+                <h3>Technical Project - Elementor Clone Website</h3>
+                <p class="project-description">Developed a responsive website clone inspired by Elementor's design principles, focusing on clean layouts and modern UI elements. This project enhanced my skills in HTML, CSS, and responsive web design techniques. Implemented various sections including hero banners, feature showcases, and call-to-action components to create a professional-looking landing page.</p>
+            </div>
+
+            <div class="projectContainer">
+                <img src="9b28faf1-f3fb-41f5-b0b1-123aca283741.jpeg" alt="" width="300" height="200" class="project-picture">
+                <h3>Coding Black Females - Nigerian Ambassador</h3>
+                <p class="activity-description">Serving as the Nigerian Ambassador for Coding Black Females, an international organization dedicated to empowering Black women in technology. I organize coding workshops, mentorship programs, and networking events to encourage more young women to pursue careers in STEM fields. Through this role, I've helped connect over 50 aspiring female developers with resources and opportunities in the tech industry.</p>
+            </div>
+
+            <div class="projectContainer">
+                <img src="image copy.png" alt="" width="300" height="200" class="project-picture">
+                <h3>Technical Project - Hangman Game</h3>
+                <p class="project-description">Created an interactive Hangman word-guessing game using HTML, CSS, and JavaScript. The game features a clean user interface with visual feedback for correct and incorrect guesses, dynamic word selection, and score tracking. This project strengthened my understanding of DOM manipulation, event handling, and game logic implementation in JavaScript.</p>
+            </div>
+
+            <div class="projectContainer">
+                <img src="image copy 2.png" alt="" width="300" height="200" class="project-picture">
+                <h3>Technical Project - News Blog Page</h3>
+                <p class="project-description">Designed and developed a modern news blog website with multiple article sections, featured posts, and category filters. The site features a responsive grid layout that adapts seamlessly to different screen sizes, ensuring optimal readability across devices. Implemented semantic HTML structure and CSS styling to create an engaging reading experience for users.</p>
+            </div>
+
+            <div class="projectContainer">
+                <img src="image copy 3.png" alt="" width="300" height="200" class="project-picture">
+                <h3>Technical Project - E-commerce Website</h3>
+                <p class="project-description">Built a fully functional e-commerce website featuring product listings, shopping cart functionality, and a checkout interface. The project includes product cards with images, prices, ratings, and add-to-cart buttons. Focused on creating an intuitive user experience with clear navigation, product categorization, and a clean, professional design that encourages user engagement and conversions.</p>
+            </div>
+
+            <div class="projectContainer">
+                <img src="c1dbc19c-7b6d-4558-9793-a5290b6bb96e.jpeg" alt="Elementor Clone Website" width="300" height="200" class="project-picture">
+                <h3>Non-Technical Project - Community Service</h3>
+                <p class="activity-description">Actively engaged in various community service initiatives focused on youth empowerment and education. Volunteered with local schools to teach basic computer literacy to underprivileged students, organized donation drives for learning materials, and participated in environmental clean-up campaigns. These experiences have reinforced my commitment to using my skills and knowledge to make a positive impact in my community.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Conatct">
+        <h2 class="sectionHeader">CONTACT INFO</h2>
+        <hr>
+        <fieldset>
+            <legend>Get in Touch</legend>
+            <form>
+                <label for="Fname">Full Name</label>
+                <input type="text" name="Fname" id="Fname">
+
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" id="email">
+
+                <label for="message">Drop a Message</label>
+                <textarea name="message" id="message"></textarea>
+                <button type="submit">SUBMIT</button>
+            </form>
+        </fieldset>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Enilara Adefila. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
