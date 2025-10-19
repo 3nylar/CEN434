@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f8f8;
+    color: #1a1a1a;
+    line-height: 1.7;
+}
+
+.courseUnit {
+    text-align: center;
+    color: #c41e3a;
+}
+
+nav > ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin: auto;
+}
+
+header {
+    margin: auto;
+    background-color: #ffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.course-title {
+    margin: auto;
+    font-size: 64px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation-bar {
+    background-color: #fff;
+    padding: 5px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.course-link {
+    text-decoration: none;
+    color: rgb(85, 68, 42);
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+}
+
+.course-link:hover {
+    border-bottom: 1px solid black;
+    color: #000;
+    font-size: 20px;
+}
+
+.course-list {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+thead {
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+tbody {
+    background-color: #fff;
+
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+td {
+    color: #2c2c2c;
+    padding: 10px;
+}
+
+tfoot {
+    background-color: #f0f0f0;
+    border-top: 2px solid #000;
+}
+
+.course {
+    margin: 20px 30px 40px;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 20pxx;
+}
+
+.course h2 {
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 10px;
+}
+
+.course p {
+    padding: 5px;
+    text-align: justify;
+    line-height: 1.7;
+    color: #333;
+}
+
+.course p strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.course-summary {
+    border-left: 2px solid #c41e3a;
+    background-color: #fafafa;
+    width: 80%;
+    padding: 10px;
+    margin: 20px;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #c41e3a;
+    border: none;
+    border-radius: 8px;
+    
+    margin: 0 10px;
+    float: right;
+    cursor: pointer;
+    padding: 10px 20px;
+    
+}
+
+button > a {
+    text-decoration: none;
+    color: #fff;
+}

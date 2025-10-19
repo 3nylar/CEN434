@@ -1,0 +1,13 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 900;
+}
+
+p {
+    color: red;
+    border: 1px dashed blue;
+}
