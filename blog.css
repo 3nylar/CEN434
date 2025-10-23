@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgb(72, 72, 72);
+    color: #fff;
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 4em;
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+header p {
+    font-size: 16px;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+nav li > a {
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+nav li > a:hover {
+    background-color: rgb(159, 158, 158);
+    color: #272626;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 20px 20px 100px;
+    margin: 20px;
+    box-shadow: 0 2px 4px gray;
+    border-radius: 20px;
+    width: 380px;
+    height: 80vh;
+}
+
+.card-header {
+    margin-bottom: 0.5rem;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #000;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #1a1a1a;
+}
+
+.caption {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+.blog-summary {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin: 1.5rem 0;
+    text-align: justify;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    float: right;
+}
+
+button a {
+    align-items: center;
+    padding: 0.85rem 1.75rem;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+button a:hover {
+    box-shadow: 0 4px 12px rgb(52, 52, 52);
+}
