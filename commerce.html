@@ -3,95 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="styless.css">
     <title>E-Commerce | Everything HouseHold</title>
 </head>
 <body>
-    <header>
-        <img src="" alt="">
-        <button type="button">Cart (0)</button>
-    </header>
     <nav>
-        <ul>
+        <h2 class="logo">DALARZY</h2>
+        <ul class="navigation-links">
             <li>
-                <a href=""></a>
+                <a href="commerce.html">Home</a>
             </li>
             <li>
-                <a href=""></a>
+                <a href="#shop">Shop</a>
             </li>
             <li>
-                <a href=""></a>
+                <a href="#product">Product</a>
             </li>
             <li>
-                <a href=""></a>
+                <a href="#blog">Blog</a>
             </li>
             <li>
-                <a href=""></a>
+                <a href="#featured">Featured</a>
+            </li>
+        </ul>
+        <ul class="navigation-icons">
+            <li>
+                <span class="material-symbols-outlined">search</span>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">person</span>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">favorite</span>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">shopping_bag</span>
             </li>
         </ul>
     </nav>
+    
+    <header>
+        <h2>The Art of Modern Interior Living</h2>
+        <p>Elevate your space with beautiful furniture</p>
+    </header>
+    <div class="header-features">
+        <ul>
+            <li><span class="material-symbols-outlined">local_shipping</span>Free Shipping Over $150</li>
+            <li><span class="material-symbols-outlined">verified_user</span>Quality Assurance</li>
+            <li><span class="material-symbols-outlined">package_2</span>Return within 14 days</li>
+            <li><span class="material-symbols-outlined">forum</span>Support 24/7</li>
+        </ul>            
+    </div>
 
-    <section>
-        <div>
-            <img src="" alt="">
-            <h3></h3>
-            <p><span></span></p>
-            <p></p>
-            <p><del></del><ins></ins></p>
+    <section id="featured" class="best-seller">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/sofa.jpg" alt="Modern Gray Sofa">
+                <h3>Modern Gray Sofa</h3>
+                <p><span>Category:</span> Living Room</p>
+                <p>Comfortable and stylish design.</p>
+                <p><del>$899.00</del> <ins>$749.00</ins></p>
 
-            <button type="button">Add to Cart</button>
-            <button type="button">Add to Wishlist</button>
+                <button type="button">Add to Cart</button>
+                <button type="button">Add to Wishlist</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/lamp.jpg" alt="Wooden Table Lamp">
+                <h3>Wooden Table Lamp</h3>
+                <p><span>Category:</span> Lighting</p>
+                <p>Warm and cozy illumination.</p>
+                <p>$129.00</p>
+
+                <button type="button">Add to Cart</button>
+                <button type="button">Add to Wishlist</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/armchair.jpg" alt="Leather Armchair">
+                <h3>Leather Armchair</h3>
+                <p><span>Category:</span> Seating</p>
+                <p>Premium comfort and durability.</p>
+                <p><del>$699.00</del> <ins>$599.00</ins></p>
+
+                <button type="button">Add to Cart</button>
+                <button type="button">Add to Wishlist</button>
+            </div>
         </div>
-        <div>
-            <img src="" alt="">
-            <h3></h3>
-            <p><span></span></p>
-            <p></p>
-            <p><del></del><ins></ins></p>
+    </section>
 
-            <button type="button">Add to Cart</button>
-            <button type="button">Add to Wishlist</button>
-        </div>
-        <div>
-            <img src="" alt="">
-            <h3></h3>
-            <p><span></span></p>
-            <p></p>
-            <p><del></del><ins></ins></p>
+    <section class="contact">
+        <h2>Stay Updated!</h2>
+        <p>Subscribe to our newsletter for the latest updates and offers.</p>
+        <form action="#">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
 
-            <button type="button">Add to Cart</button>
-            <button type="button">Add to Wishlist</button>
-        </div>
-        <div>
-            <img src="" alt="">
-            <h3></h3>
-            <p><span></span></p>
-            <p></p>
-            <p><del></del><ins></ins></p>
-
-            <button type="button">Add to Cart</button>
-            <button type="button">Add to Wishlist</button>
-        </div>
-        <div>
-            <img src="" alt="">
-            <h3></h3>
-            <p><span></span></p>
-            <p></p>
-            <p><del></del><ins></ins></p>
-
-            <button type="button">Add to Cart</button>
-            <button type="button">Add to Wishlist</button>
+    <section id="shop">
+        <h2>Shop All Categories</h2>
+        <div class="shop-categories">
+            <div class="category-card">
+                <img src="images/living-room.jpg" alt="Living Room">
+                <h3>Living Room</h3>
+            </div>
+            <div class="category-card">
+                <img src="images/bedroom.jpg" alt="Bedroom">
+                <h3>Bedroom</h3>
+            </div>
+            <div class="category-card">
+                <img src="images/kitchen.jpg" alt="Kitchen">
+                <h3>Kitchen</h3>
+            </div>
+            <div class="category-card">
+                <img src="images/decor.jpg" alt="Decor">
+                <h3>Decor</h3>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>Contact: 
-            <ul>
-                <li>
-                    <a href="mailto">support@techgear.com</a>
-                </li>
-            </ul>  
-        </p>
-        <p>&copy; 2025 TechGear Store. All rights reserved.</p>
+        <p>&copy; 2025 Dalarzy. All rights reserved</p>
     </footer>
 </body>
 </html>
