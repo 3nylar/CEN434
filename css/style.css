@@ -92,6 +92,17 @@ td {
     padding: 10px;
 }
 
+.course-code, .course-title {
+    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24pt;
+}
+
+.course-lecturer {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 tfoot {
     background-color: #f0f0f0;
     border-top: 2px solid #000;
