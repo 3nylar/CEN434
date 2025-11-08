@@ -24,7 +24,7 @@ print("Dataset saved to 'data.csv'.")
 
 # Visualize data
 plt.figure(figsize=(10, 6))
-plt.scatter(df['Hours_Studied'], df['Exam_Score'], color='blue', alpha=0.6)
+plt.scatter(df['Hours_Studied'], df['Exam_Score'], color='blue', alpha=0.6, s=100)
 plt.xlabel('Hours Studied', fontsize=14)
 plt.ylabel('Exam Score', fontsize=14)
 plt.title('Exam Score vs Hours Studied', fontsize=16)
