@@ -31,12 +31,12 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#a4a0a0',
   },
   container: {
     padding: 20,
     marginHorizontal: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#4b4848',
     borderRadius: 10,
     elevation: 3, // Shadow for Android
   },
