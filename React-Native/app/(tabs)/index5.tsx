@@ -1,16 +1,23 @@
 // News Aggregator Component in React Native
 
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  Linking,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 interface NewsItem {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   url: string;
-  urlToImage?: string;
-  publishedAt: string;
-  source: {
-    name: string;
+  publishedAt?: string;
+  source?: {
+    name?: string;
   };
 }
 
@@ -21,16 +28,16 @@ const NewsAggregator = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        // Replace 'YOUR_API_KEY' with your actual NewsAPI key
-        const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY');
+        const response = await fetch(
+          'https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY'
+        );
         const data = await response.json();
-        if (data.status === 'ok') {
-          setNews(data.articles);
-        } else {
-          console.error('Error fetching news:', data.message);
+
+        if (data?.status === 'ok') {
+          setNews(data.articles || []);
         }
-      } catch (error) {
-        console.error('Error fetching news:', error);
+      } catch (err) {
+        console.error('Failed to fetch news', err);
       } finally {
         setLoading(false);
       }
@@ -39,74 +46,102 @@ const NewsAggregator = () => {
     fetchNews();
   }, []);
 
-  const renderNewsItem = ({ item }: { item: NewsItem }) => (
-    <TouchableOpacity style={styles.newsItem} onPress={() => Linking.openURL(item.url)}>
-      <Text style={styles.newsTitle}>{item.title}</Text>
-      <Text style={styles.newsDescription}>{item.description}</Text>
-      <Text style={styles.newsSource}>{item.source.name} - {new Date(item.publishedAt).toLocaleDateString()}</Text>
-    </TouchableOpacity>
-  );
+  const renderItem = ({ item }: { item: NewsItem }) => {
+    const date = item.publishedAt
+      ? new Date(item.publishedAt).toLocaleDateString()
+      : '';
+
+    return (
+      <TouchableOpacity
+        style={styles.card}
+        activeOpacity={0.85}
+        onPress={() => Linking.openURL(item.url)}
+      >
+        <Text style={styles.headline} numberOfLines={2}>
+          {item.title || 'Untitled article'}
+        </Text>
+
+        {item.description ? (
+          <Text style={styles.description} numberOfLines={3}>
+            {item.description}
+          </Text>
+        ) : null}
+
+        <Text style={styles.meta}>
+          {item.source?.name || 'Unknown source'}
+          {date ? ` · ${date}` : ''}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>News Aggregator</Text>
+      <Text style={styles.title}>Top Headlines</Text>
+      <Text style={styles.subtitle}>Stay informed. No noise.</Text>
+
       {loading ? (
-        <ActivityIndicator size="large" color="#1a4d2e" />
+        <View style={styles.loader}>
+          <ActivityIndicator size="large" color="#9ca3af" />
+        </View>
       ) : (
         <FlatList
           data={news}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={renderNewsItem}
+          keyExtractor={(item, index) => item.url ?? index.toString()}
+          renderItem={renderItem}
           showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 20 }}
         />
       )}
     </View>
   );
 };
 
+export default NewsAggregator;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    marginHorizontal: 20,
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    marginBottom: 24,
+    paddingTop: 24,
+    paddingHorizontal: 20,
+    backgroundColor: '#020617',
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    textAlign: 'center',
-    color: '#1a4d2e',
+    fontSize: 26,
+    fontWeight: '800',
+    color: '#f9fafb',
   },
-  newsItem: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-    marginBottom: 8,
-  },
-  newsTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: '#333',
-  },
-  newsDescription: {
+  subtitle: {
     fontSize: 14,
-    color: '#666',
-    marginBottom: 8,
+    color: '#9ca3af',
+    marginBottom: 20,
   },
-  newsSource: {
+  loader: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  card: {
+    backgroundColor: '#111827',
+    padding: 18,
+    borderRadius: 16,
+    marginBottom: 14,
+    borderWidth: 1,
+    borderColor: '#1f2937',
+  },
+  headline: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#f9fafb',
+    marginBottom: 6,
+  },
+  description: {
+    fontSize: 14,
+    color: '#d1d5db',
+    marginBottom: 10,
+    lineHeight: 20,
+  },
+  meta: {
     fontSize: 12,
-    color: '#999',
-    fontStyle: 'italic',
+    color: '#9ca3af',
   },
 });
-
-export default NewsAggregator;

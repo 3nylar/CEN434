@@ -1,4 +1,5 @@
 // Simple Text Editor Component in React Native
+
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
