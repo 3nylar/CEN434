@@ -1,7 +1,13 @@
 // Simple Text Editor Component in React Native
 
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const SimpleTextEditor = () => {
   const [text, setText] = useState('');
@@ -15,61 +21,117 @@ const SimpleTextEditor = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Text Editor</Text>
+      <Text style={styles.subtitle}>Write. Save. Stay focused.</Text>
+
       <TextInput
-        style={styles.input}
+        style={styles.editor}
         multiline
         value={text}
         onChangeText={setText}
-        placeholder="Type your text here..."
+        placeholder="Start typing…"
+        placeholderTextColor="#6b7280"
+        textAlignVertical="top"
       />
-      <View style={styles.buttons}>
-        <Button title="Save" onPress={saveText} />
-        <Button title="Clear" onPress={clearText} />
+
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.primaryButton} onPress={saveText}>
+          <Text style={styles.primaryButtonText}>Save</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.secondaryButton} onPress={clearText}>
+          <Text style={styles.secondaryButtonText}>Clear</Text>
+        </TouchableOpacity>
       </View>
-      <Text style={styles.resultText}>Saved Text: {savedText}</Text>
+
+      {savedText ? (
+        <View style={styles.savedCard}>
+          <Text style={styles.savedLabel}>Saved Text</Text>
+          <Text style={styles.savedContent}>{savedText}</Text>
+        </View>
+      ) : null}
     </View>
   );
 };
 
+export default SimpleTextEditor;
+
+
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
-    marginHorizontal: 20,
-    backgroundColor: '#fff',
+    paddingTop: 24,
+    paddingHorizontal: 20,
+    backgroundColor: '#020617',
+    flex: 1,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: '800',
+    color: '#f9fafb',
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#9ca3af',
+    marginBottom: 20,
+  },
+  editor: {
+    minHeight: 160,
     borderRadius: 16,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    marginBottom: 24,
+    borderWidth: 1,
+    borderColor: '#1f2937',
+    backgroundColor: '#020617',
+    padding: 16,
+    fontSize: 16,
+    color: '#f9fafb',
+    lineHeight: 22,
   },
-  input: {
-    height: 80,
-    borderColor: '#b0b0b0',
-    borderWidth: 1.5,
-    borderRadius: 8,
-    paddingHorizontal: 14,
-    fontSize: 17,
-    marginBottom: 18,
-    backgroundColor: '#fafbfc',
-  },
-  buttons: {
+  buttonRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 12,
-    gap: 10,
+    gap: 12,
+    marginTop: 16,
   },
-  resultText: {
-    fontSize: 21,
-    fontWeight: 'bold',
-    color: '#1a4d2e',
-    backgroundColor: '#e6f7ef',
-    padding: 10,
-    borderRadius: 8,
-    marginTop: 10,
-    textAlign: 'center',
+  primaryButton: {
+    flex: 1,
+    height: 48,
+    backgroundColor: '#1f2937',
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  primaryButtonText: {
+    color: '#f9fafb',
+    fontWeight: '600',
+  },
+  secondaryButton: {
+    flex: 1,
+    height: 48,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#1f2937',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  secondaryButtonText: {
+    color: '#9ca3af',
+    fontWeight: '600',
+  },
+  savedCard: {
+    marginTop: 24,
+    padding: 16,
+    borderRadius: 16,
+    backgroundColor: '#111827',
+    borderWidth: 1,
+    borderColor: '#1f2937',
+  },
+  savedLabel: {
+    fontSize: 12,
+    color: '#9ca3af',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: 6,
+  },
+  savedContent: {
+    fontSize: 15,
+    color: '#e5e7eb',
+    lineHeight: 22,
   },
 });
-
-export default SimpleTextEditor;
