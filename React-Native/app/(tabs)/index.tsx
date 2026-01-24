@@ -12,7 +12,7 @@ const WeightConverter = () => {
 
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>⚖️ Weight Converter</Text>
+      <Text style={styles.title}> Weight Converter</Text>
       <Text style={styles.subtitle}>
         Convert kilograms to pounds instantly
       </Text>
