@@ -1,161 +1,78 @@
-// Basic Calculator Component in React Native
-
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const Calculator = () => {
   const [num1, setNum1] = useState('');
   const [num2, setNum2] = useState('');
-  const [result, setResult] = useState<string>('—');
+  const [result, setResult] = useState<number | string>('null');
 
   const calculate = (operation: string) => {
     const a = parseFloat(num1);
     const b = parseFloat(num2);
-
-    if (isNaN(a) || isNaN(b)) {
-      setResult('Invalid input');
-      return;
-    }
-
-    let value: number | string;
+    if (isNaN(a) || isNaN(b)) return;
 
     switch (operation) {
-      case '+':
-        value = a + b;
-        break;
-      case '-':
-        value = a - b;
-        break;
-      case '*':
-        value = a * b;
-        break;
-      case '/':
-        value = b !== 0 ? a / b : 'Error';
-        break;
-      default:
-        return;
+      case '+': setResult(a + b); break;
+      case '-': setResult(a - b); break;
+      case '*': setResult(a * b); break;
+      case '/': setResult(b !== 0 ? a / b : 'Error'); break;
     }
-
-    setResult(String(value));
   };
 
   return (
-    <View style={styles.card}>
-      <Text style={styles.title}>Calculator</Text>
-      <Text style={styles.subtitle}>Simple. Quiet. Accurate.</Text>
-
-      <View style={styles.inputsRow}>
-        <TextInput
-          style={styles.input}
-          keyboardType="numeric"
-          placeholder="0"
-          placeholderTextColor="#6b7280"
-          value={num1}
-          onChangeText={setNum1}
-        />
-        <TextInput
-          style={styles.input}
-          keyboardType="numeric"
-          placeholder="0"
-          placeholderTextColor="#6b7280"
-          value={num2}
-          onChangeText={setNum2}
-        />
+    <View style={styles.container}>
+      <TextInput style={styles.input} keyboardType="numeric" value={num1} onChangeText={setNum1} placeholder="First number" />
+      <TextInput style={styles.input} keyboardType="numeric" value={num2} onChangeText={setNum2} placeholder="Second number" />
+      <View style={styles.buttons}>
+        <Button title="+" onPress={() => calculate('+')} />
+        <Button title="-" onPress={() => calculate('-')} />
+        <Button title="*" onPress={() => calculate('*')} />
+        <Button title="/" onPress={() => calculate('/')} />
       </View>
-
-      <View style={styles.buttonGrid}>
-        {['+', '-', '*', '/'].map(op => (
-          <TouchableOpacity
-            key={op}
-            style={styles.button}
-            onPress={() => calculate(op)}
-            activeOpacity={0.8}
-          >
-            <Text style={styles.buttonText}>{op}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-
-      <View style={styles.resultBox}>
-        <Text style={styles.resultLabel}>Result</Text>
-        <Text style={styles.resultValue}>{result}</Text>
-      </View>
+      <Text style={styles.resultText}>Result: {result}</Text>
     </View>
   );
 };
 
-export default Calculator;
-
 const styles = StyleSheet.create({
-  card: {
+  container: {
     padding: 24,
     marginHorizontal: 20,
-    backgroundColor: '#111827', // deep slate
-    borderRadius: 18,
-    elevation: 6,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: '700',
-    color: '#f9fafb',
-  },
-  subtitle: {
-    fontSize: 13,
-    color: '#9ca3af',
-    marginBottom: 20,
-  },
-  inputsRow: {
-    flexDirection: 'row',
-    gap: 12,
-    marginBottom: 20,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    marginBottom: 24,
   },
   input: {
-    flex: 1,
-    height: 50,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#1f2933',
-    backgroundColor: '#020617',
+    height: 48,
+    borderColor: '#b0b0b0',
+    borderWidth: 1.5,
+    borderRadius: 8,
     paddingHorizontal: 14,
-    fontSize: 18,
-    color: '#f9fafb',
+    fontSize: 17,
+    marginBottom: 18,
+    backgroundColor: '#fafbfc',
   },
-  buttonGrid: {
+  buttons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 22,
+    marginVertical: 12,
+    gap: 10,
   },
-  button: {
-    flex: 1,
-    height: 52,
-    marginHorizontal: 4,
-    borderRadius: 14,
-    backgroundColor: '#1f2937',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#e5e7eb',
-  },
-  resultBox: {
-    padding: 16,
-    borderRadius: 14,
-    backgroundColor: '#020617',
-    borderWidth: 1,
-    borderColor: '#1f2937',
-  },
-  resultLabel: {
-    fontSize: 12,
-    color: '#9ca3af',
-    marginBottom: 4,
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-  },
-  resultValue: {
-    fontSize: 26,
-    fontWeight: '800',
-    color: '#f9fafb',
+  resultText: {
+    fontSize: 21,
+    fontWeight: 'bold',
+    color: '#1a4d2e',
+    backgroundColor: '#e6f7ef',
+    padding: 10,
+    borderRadius: 8,
+    marginTop: 10,
+    textAlign: 'center',
   },
 });
+
+export default Calculator;
