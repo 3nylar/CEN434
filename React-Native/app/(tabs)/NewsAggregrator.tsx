@@ -19,12 +19,13 @@ interface NewsItem {
   source?: {
     name?: string;
   };
-}
+} 
 
 const NewsAggregator = () => {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch news articles from the News API when the component mounts
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -46,6 +47,7 @@ const NewsAggregator = () => {
     fetchNews();
   }, []);
 
+  // Function to render each news item in the FlatList
   const renderItem = ({ item }: { item: NewsItem }) => {
     const date = item.publishedAt
       ? new Date(item.publishedAt).toLocaleDateString()
@@ -75,6 +77,7 @@ const NewsAggregator = () => {
     );
   };
 
+  // Main render function for the News Aggregator component
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Top Headlines</Text>
@@ -97,8 +100,9 @@ const NewsAggregator = () => {
   );
 };
 
-export default NewsAggregator;
+export default NewsAggregator; // Exporting the News Aggregator component as the default export
 
+// Styles for the News Aggregator component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
