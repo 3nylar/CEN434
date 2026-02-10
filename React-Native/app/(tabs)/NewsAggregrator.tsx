@@ -20,7 +20,6 @@ interface NewsItem {
     name?: string;
   };
 } 
-
 const NewsAggregator = () => {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
