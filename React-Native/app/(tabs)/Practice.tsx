@@ -3,7 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View} from "react-native";
 
 export default function ProfileCard() {
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={{backgroundColor: 'lightgrey', height: '100%,'}}>
             <View style={styles.card}>
                 <Image source={require('../../assets/images/favicon.png')} style={styles.profileImage} />
                 <Text style={styles.profileName}>John Doe</Text>
