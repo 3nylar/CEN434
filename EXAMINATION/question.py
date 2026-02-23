@@ -1,17 +1,18 @@
-# import numpy as np
+# int (integer)
+# float (floating point number)
 
-# arr = np.array(42)
+A = [12, 20, 28, 36, 44, 52, 60]
+a = A[0]
+n = len(A)
+d = A[1] - A[0]
 
-# print(arr)
-
-# print(type(arr))
-
-# import numpy as np
-
-# print(np.__version__)
-
-import numpy as np
-
-arr = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
-
-print(arr)
+def formularM():
+    aritmeticP = (n / 2) * (2 * a + (n - 1) * d)
+    return aritmeticP
+print("The sum of the arithmetic progression is: ", formularM())
+def iterationM():
+    totalSum = 0
+    for i in A :
+        totalSum += i
+    return totalSum
+print("The sum of the arithmetic progression is: ", iterationM())

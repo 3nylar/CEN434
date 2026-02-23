@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateTemperature(type, value) {
+            switch(type) {
+                case 1:
+                    return (value * 9/5) + 32; // Celsius to Fahrenheit
+                case 2:
+                    return (value - 32) * 5/9; // Fahrenheit to Celsius
+                case 3:
+                    return value + 273.15; // Celsius to Kelvin
+                case 4:
+                    return value - 273.15; // Kelvin to Celsius
+                case 5:
+                    return ((value - 273.15) * 9/5) + 32; // Kelvin to Fahrenheit
+                case 6: 
+                    return ((value - 32) * 5/9) + 273.15; // Fahrenheit to Kelvin
+                default:
+                    return "Invalid type";
+            }
+        }
+
+        console.log(calculateTemperature(1, 25)); // Celsius to Fahrenheit
+        console.log(calculateTemperature(2, 77)); // Fahrenheit to Celsius
+        console.log(calculateTemperature(3, 25)); // Celsius to Kelvin
+    </script>
+</body>
+</html>

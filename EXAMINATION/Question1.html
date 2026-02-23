@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION1</title>
+</head>
+<body>
+    <script>
+        function FunctionA() {
+            let classPopulation = 10;
+            let percentageScore = [58, 66, 89, 73, 66, 80, 80, 76, 96, 80];
+            return percentageScore;
+        }
+
+        function FunctionB(percentageScore) {
+            let sum = percentageScore.reduce((acc, val) => acc + val, 0);
+            let mean = sum / percentageScore.length;
+            return mean;
+        }
+
+        function FunctionC(percentageScore) {
+            let sorted = [...percentageScore].sort((a, b) => a - b);
+            let mid = Math.floor(sorted.length / 2);
+            if(sorted.length % 2  !== 0) {
+                return sorted[mid];
+            }
+            else {
+                return (sorted[mid-1] + sorted[mid]) / 2;
+            }
+        }
+
+        const scores = FunctionA();
+        console.log("Mean: ", FunctionB(scores));
+        console.log("Median: ", FunctionC(scores));
+
+        // int (integer)
+        // float (floating point numbers) 
+        // strings
+        let A = [2, 8, 14, 20, 26];
+        let d = A[1] - A[0];
+        let a = A[0];
+        let n = A.length;
+
+        function formular() {
+            let arithmeticP = (n / 2) * (2 * a + (n- 1) * d);
+            return arithmeticP;
+        }
+
+        console.log(formular());
+
+        function iteration() {
+            let Total = 0;
+            for (val of A) {
+              Total = Total + val 
+            }
+            return Total;
+        }
+
+        console.log(iteration());
+
+        function convertMassScale(type, value) {
+            switch(type) {
+                case 1:
+                    PoundK = 0.45359237 * value; // Kilogram to Pound
+                    return PoundK;
+                case 2:
+                    KilogramP = value / 0.45359237; // Pound to Kilogram
+                    return KilogramP;
+                case 3:
+                    KilogramO = (0.45359237 * value) * 16 // Ounce to Kilogram
+                    return KilogramO;
+                case 4:  
+                    Ounce = (value / 0.45359237) / 16 // Kilogram to Ounce
+                    return Ounce;
+                case 5: 
+                    PoundO = value * 16 // Pound to Ounce
+                    return PoundO;
+                case 6:
+                    OunceP = value / 16 // Ounce to Pound
+                    return OunceP;
+                default:
+                    return "Invalid type";
+            }
+        }
+
+        console.log(convertMassScale(1, 150)); // Kilogram to Pound
+        console.log(convertMassScale(2, 330.693)); // Pound to Kilogram
+
+    </script>
+</body>
+</html>
