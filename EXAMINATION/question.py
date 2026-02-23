@@ -1,11 +1,11 @@
 # import numpy as np
 
-# arr = np.array([1, 2, 3, 4, 5])
+# arr = np.array(42)
 
 # print(arr)
 
 # print(type(arr))
 
-import numpy as np
+# import numpy as np
 
-print(np.__version__)
+# print(np.__version__)
